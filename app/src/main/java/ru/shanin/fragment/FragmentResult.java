@@ -59,8 +59,8 @@ public class FragmentResult extends Fragment {
     }
 
     private void initLayout(View view) {
-        TextView tv_input = view.findViewById(R.id.result_tv);
-        tv_input.setText(input_data_text);
+        TextView tv_output = view.findViewById(R.id.result_tv);
+        tv_output.setText(input_data_text);
         (view.findViewById(R.id.result_bt)).setOnClickListener(
                 v -> requireActivity().onBackPressed());
     }

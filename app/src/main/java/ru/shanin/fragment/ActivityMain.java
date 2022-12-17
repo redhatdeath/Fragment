@@ -4,18 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
 public class ActivityMain extends AppCompatActivity {
 
     private FragmentContainerView fragmentContainerView;
-    private EditText et;
-    private Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +30,7 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private final class ButtonClickListener implements View.OnClickListener {
+        private final EditText et;
 
         public ButtonClickListener(Activity activity, int btId, int etId) {
             et = activity.findViewById(etId);
@@ -50,12 +47,15 @@ public class ActivityMain extends AppCompatActivity {
 
     private void launchActivityResultWithStringData(String data) {
         Intent i = ActivityResult
-                .newIntentActivityResultWithStringData(getApplicationContext(), data);
+                .newIntentActivityResultWithStringData(
+                        getApplicationContext(), data
+                );
         startActivity(i);
     }
 
     private void launchFragmentResultWithStringData(String data) {
 //        Fragment fragment = FragmentResult.newInstanceWithInputData(data);
+        // if(fragment....)
         getSupportFragmentManager().popBackStack();
         getSupportFragmentManager()
                 .beginTransaction()
@@ -64,5 +64,4 @@ public class ActivityMain extends AppCompatActivity {
 //                .add(R.id.fcv_am, fragment)
                 .commit();
     }
-
 }

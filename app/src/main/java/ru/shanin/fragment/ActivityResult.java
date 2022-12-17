@@ -55,5 +55,4 @@ public class ActivityResult extends AppCompatActivity {
                 .replace(R.id.fcv_ar, fragment)
                 .commit();
     }
-
 }
