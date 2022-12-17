@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
 public class ActivityMain extends AppCompatActivity {
@@ -59,7 +60,7 @@ public class ActivityMain extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("null")
-                .replace(R.id.fcv_ar, FragmentResult.newInstanceWithInputData(data))
+                .replace(R.id.fcv_am, FragmentResult.newInstanceWithInputData(data))
 //                .add(R.id.fcv_am, fragment)
                 .commit();
     }
